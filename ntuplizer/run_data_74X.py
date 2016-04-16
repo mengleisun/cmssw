@@ -15,11 +15,12 @@ process.GlobalTag = GlobalTag(process.GlobalTag, '74X_dataRun2_v4')
 
 #process.Tracer = cms.Service("Tracer")
 
-process.maxEvents = cms.untracked.PSet( input = cms.untracked.int32(1000) )
+process.maxEvents = cms.untracked.PSet( input = cms.untracked.int32(-1) )
 
 process.source = cms.Source("PoolSource",
                             fileNames = cms.untracked.vstring(
-        '/store/data/Run2015D/SinglePhoton/AOD/PromptReco-v4/000/258/705/00000/2E125E8A-1071-E511-9BE9-02163E01392B.root'
+        #'/store/data/Run2015C_25ns/DoubleEG/AOD/05Oct2015-v1/30000/1084B218-5E74-E511-8A47-0025905938A8.root'
+        #'/store/data/Run2015D/SinglePhoton/AOD/PromptReco-v4/000/258/705/00000/2E125E8A-1071-E511-9BE9-02163E01392B.root'
         #'/store/data/Run2015D/DoubleMuon/MINIAOD/05Oct2015-v1/30000/04008DF6-8A6F-E511-B034-0025905A6136.root'
         #'/store/express/Run2015C/ExpressPhysics/FEVT/Express-v1/000/254/879/00000/FA465069-4D49-E511-AD11-02163E011E1E.root'
 )
