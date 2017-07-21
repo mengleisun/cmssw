@@ -109,6 +109,7 @@ private:
   edm::EDGetTokenT<reco::PFJetCollection>       jetToken_;
   edm::EDGetTokenT<edm::View<reco::GsfElectron> > eleToken_;
   edm::EDGetTokenT<reco::MuonCollection>        muoToken_;
+  edm::EDGetTokenT<reco::PhotonCollection>      phoToken_;
   // Marina
   edm::EDGetTokenT<reco::JetTagCollection>  jetTagToken_ ;
   //Suvankar
@@ -137,9 +138,11 @@ private:
   std::vector<double> jetPt_variable_binning_2D_;
   std::vector<double> muPt_variable_binning_2D_;
   std::vector<double> elePt_variable_binning_2D_;
+  std::vector<double> phoPt_variable_binning_2D_;
   std::vector<double> jetEta_variable_binning_2D_;
   std::vector<double> muEta_variable_binning_2D_;
   std::vector<double> eleEta_variable_binning_2D_;
+  std::vector<double> phoEta_variable_binning_2D_;
   std::vector<double> phi_variable_binning_2D_;
 
   METME metME_;
@@ -150,6 +153,7 @@ private:
   METME jetVsLS_;
   METME muVsLS_;
   METME eleVsLS_;
+  METME phoVsLS_;
   // Marina
   METME bjetVsLS_;
   METME htVsLS_;
@@ -159,6 +163,7 @@ private:
   METME jetMulti_;
   METME eleMulti_;
   METME muMulti_;
+  METME phoMulti_;
   // Marina
   METME bjetMulti_;
 
@@ -171,6 +176,8 @@ private:
   METME mu1Eta_mu2Eta_;
   METME elePt_muPt_;
   METME eleEta_muEta_;
+  METME muPt_phoPt_;
+  METME muEta_phoEta_;
 
   //BTV
   METME DeltaR_jet_Mu_;
@@ -182,6 +189,10 @@ private:
   std::vector<METME> elePhi_;
   std::vector<METME> eleEta_;
   std::vector<METME> elePt_;
+
+  std::vector<METME> phoPhi_;
+  std::vector<METME> phoEta_;
+  std::vector<METME> phoPt_;
 
   std::vector<METME> jetPhi_;
   std::vector<METME> jetEta_;
@@ -213,6 +224,8 @@ private:
   std::vector<METME> eleEtaPhi_;
   std::vector<METME> muPtEta_;
   std::vector<METME> muEtaPhi_;
+  std::vector<METME> phoPtEta_;
+  std::vector<METME> phoEtaPhi_;
   // Marina
   std::vector<METME> bjetPtEta_;
   std::vector<METME> bjetEtaPhi_;
@@ -229,6 +242,7 @@ private:
   StringCutObjectSelector<reco::GsfElectron,true> eleSelection_;
   StringCutObjectSelector<reco::GsfElectron,true> eleSelection1_;
   StringCutObjectSelector<reco::Muon,true>        muoSelection_;
+  StringCutObjectSelector<reco::Photon, true>     phoSelection_;
   StringCutObjectSelector<reco::PFJet,true   >    HTdefinition_;
   //Suvankar
   StringCutObjectSelector<reco::Vertex,true>      vtxSelection_;
@@ -238,6 +252,7 @@ private:
 unsigned int njets_;
   unsigned int nelectrons_;
   unsigned int nmuons_;
+  unsigned int nphotons_;
   double leptJetDeltaRmin_;
   double bJetMuDeltaRmax_;
   double bJetDeltaEtaMax_;
@@ -249,6 +264,8 @@ unsigned int njets_;
   //Suvankar
   PVcut  lepPVcuts_;
   bool usePVcuts_;
+  //Menglei
+  bool enablePhotonPlot_;
   
 };
 
